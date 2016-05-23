@@ -26,26 +26,29 @@ public class AppFrame extends JFrame {
 	@SuppressWarnings("unchecked")
 	public AppFrame() {
 		super("FIle Manager");
-		setLayout(new FlowLayout());// check layout in the of unit 11
+		//setLayout(new FlowLayout());// check layout in the of unit 11
+		
+		BorderLayout layout = new BorderLayout(5,5);
+		setLayout(layout);
 
 		suorceTitel = new JLabel("Source Folder");
-		suorceTitel.setVerticalTextPosition(SwingConstants.TOP);
-		suorceTitel.setHorizontalTextPosition(SwingConstants.LEFT);
-		add(suorceTitel);
+		//suorceTitel.setVerticalTextPosition(SwingConstants.TOP);
+		//suorceTitel.setHorizontalTextPosition(SwingConstants.LEFT);
+		add(suorceTitel,BorderLayout.NORTH);
 
 		backupTitel = new JLabel("Backup Folder");
 		backupTitel.setVerticalTextPosition(SwingConstants.TOP);
 		backupTitel.setHorizontalTextPosition(SwingConstants.LEFT);
-		add(backupTitel);
+		add(backupTitel,BorderLayout.NORTH);
 
 		suorcePath = new JTextField(25);
 		// SuorcePathHanler textHandler = new SuorcePathHanler();
 		// suorcePath.addActionListener( textHandler );
-		add(suorcePath);
+		add(suorcePath,BorderLayout.NORTH);
 
 		backupPath = new JTextField("here I need to set the path to the backup folder");
 		backupPath.setEnabled(false);
-		add(backupPath);
+		add(backupPath,BorderLayout.NORTH);
 
 		suorceList = new JList(textingArr);
 		suorceList.setVisibleRowCount(5);
@@ -57,7 +60,7 @@ public class AppFrame extends JFrame {
 		// ListListener suorceListHandler = new SuorceListListener();
 		// suorceList.addActionListener( suorceListHandler );
 		// check again in unit 11 pages 31-36
-		add(suorceList);
+		add(suorceList,BorderLayout.WEST);
 
 		backupList = new JList();
 		backupList.setVisibleRowCount(5);
@@ -69,42 +72,42 @@ public class AppFrame extends JFrame {
 		// ListListener backupListHandler = new BackupListListener();
 		// backupList.addActionListener( backupListHandler );
 		// check again in unit 11 pages 31-36
-		add(backupList);
+		add(backupList,BorderLayout.SOUTH);
 
 		backupButton = new JButton("Backup");
 		// create new ButtonHandler for button event handling
 		// ButtonHandler backupHandler = new BackupHandler();
 		// backupButton.addActionListener( backupHandler );
 		// check again in unit 11 pages 31-36
-		add(backupButton);
+		add(backupButton,BorderLayout.EAST);
 
 		restoreButton = new JButton("Restore");
 		// create new ButtonHandler for button event handling
 		// ButtonHandler restoreHandler = new restoreHandler();
 		// restoreButton.addActionListener( RestoreHandler );
 		// check again in unit 11 pages 31-36
-		add(restoreButton);
+		add(restoreButton,BorderLayout.WEST);
 
 		deleteButton = new JButton("Delete");
 		// create new ButtonHandler for button event handling
 		// ButtonHandler deleteHandler = new DeleteHandler();
 		// deleteButton.addActionListener( deleteHandler );
 		// check again in unit 11 pages 31-36
-		add(deleteButton);
+		add(deleteButton,BorderLayout.WEST);
 
 		addButton = new JButton("Add");
 		// create new ButtonHandler for button event handling
 		// ButtonHandler addHandler = new AddHandler();
 		// addButton.addActionListener( addHandler );
 		// check again in unit 11 pages 31-36
-		add(addButton);
+		add(addButton,BorderLayout.EAST);
 
 		renameButton = new JButton("Rename");
 		// create new ButtonHandler for button event handling
 		// ButtonHandler renameHandler = new RenameHandler();
 		// renameButton.addActionListener( renameHandler );
 		// check again in unit 11 pages 31-36
-		add(renameButton);
+		add(renameButton,BorderLayout.EAST);
 
 		// code...
 	}
