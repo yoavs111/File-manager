@@ -20,8 +20,10 @@ public class AppFrame extends JFrame {
 	private JButton addButton;
 	private JButton renameButton;
 
+	private String textingArr[]={"test","test","test","test","test","test","test","test"};
 	// fileds...
 
+	@SuppressWarnings("unchecked")
 	public AppFrame() {
 		super("FIle Manager");
 		setLayout(new FlowLayout());// check layout in the of unit 11
@@ -36,7 +38,7 @@ public class AppFrame extends JFrame {
 		backupTitel.setHorizontalTextPosition(SwingConstants.LEFT);
 		add(backupTitel);
 
-		suorcePath = new JTextField(40);
+		suorcePath = new JTextField(25);
 		// SuorcePathHanler textHandler = new SuorcePathHanler();
 		// suorcePath.addActionListener( textHandler );
 		add(suorcePath);
@@ -45,8 +47,10 @@ public class AppFrame extends JFrame {
 		backupPath.setEnabled(false);
 		add(backupPath);
 
-		suorceList = new JList();
-		suorceList.setVisibleRowCount(10);
+		suorceList = new JList(textingArr);
+		suorceList.setVisibleRowCount(5);
+		suorceList.setFixedCellWidth(200); // set width  
+		suorceList.setFixedCellHeight(25); // set height 
 		suorceList.setSelectionMode(ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
 		// add a JScrollPane containing JList to frame
 		add(new JScrollPane(suorceList));
@@ -56,7 +60,9 @@ public class AppFrame extends JFrame {
 		add(suorceList);
 
 		backupList = new JList();
-		backupList.setVisibleRowCount(10);
+		backupList.setVisibleRowCount(5);
+		backupList.setFixedCellWidth(100);// set width  
+		backupList.setFixedCellHeight(25);// set height
 		backupList.setSelectionMode(ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
 		// add a JScrollPane containing JList to frame
 		add(new JScrollPane(backupList));
