@@ -20,7 +20,7 @@ public class AppFrame extends JFrame {
 	private JButton addButton;
 	private JButton renameButton;
 
-	private String textingArr[]={"test","test","test","test","test","test","test","test"};
+	private String textingArr[]={"opps","opps","opps","opps","opps","opps","opps","opps"};
 	// fileds...
 
 	@SuppressWarnings("unchecked")
