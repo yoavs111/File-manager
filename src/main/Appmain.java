@@ -9,7 +9,7 @@ public class Appmain {
 	public static void main(String[] args) {
 		AppFrame appFrame = new AppFrame();//// create appFrame
 		appFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		appFrame.setSize(500, 550); // set frame size
+		appFrame.setSize(500, 500); // set frame size
 		appFrame.setVisible(true); // display frame
 	} // end main
 } // end class LabelTest
