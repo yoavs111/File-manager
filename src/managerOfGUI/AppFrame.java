@@ -74,86 +74,89 @@ public class AppFrame extends JFrame {
 			    textFieldBackupPath = new JTextField("here I need to set the path to the backup folder");
 			    textFieldBackupPath.setEnabled(false);
 			    panelInerNorth2.add(textFieldBackupPath,BorderLayout.EAST);
-			  //endtextFieldBackupPath
+			  //end textFieldBackupPath
 			    
 		    //end inernorth2	
 			    
 		//end panelNorth
 		
-         
+		//panelCenter
+		  panelCenter = new JPanel(new BorderLayout());
+		  panelMain.add(panelCenter, BorderLayout.CENTER);
+		  
+		  //listSuorce
+		    listSuorce = new JList(textingArr);
+		    listSuorce.setVisibleRowCount(5);
+		    listSuorce.setSelectionMode(ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
+			// add a JScrollPane containing JList to frame
+		    panelCenter.add(new JScrollPane(listSuorce));
+			// ListListener suorceListHandler = new SuorceListListener();
+			// suorceList.addActionListener( suorceListHandler );
+			// check again in unit 11 pages 31-36
+			panelCenter.add(listSuorce,BorderLayout.WEST);
+          //end listSuorce
+			
+			//listBackup
+			  listBackup = new JList();
+			  listBackup.setVisibleRowCount(5);
+			  listBackup.setSelectionMode(ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
+			  //add a JScrollPane containing JList to frame
+			  panelCenter.add(new JScrollPane(listBackup));
+			  // ListListener backupListHandler = new BackupListListener();
+			  // backupList.addActionListener( backupListHandler );
+			  // check again in unit 11 pages 31-36
+			  panelCenter.add(listBackup,BorderLayout.EAST);
+			//end listBackup
+			   
+		//end panelCenter
 		
-		
-		
-		//center
-		
-		//
-		
-		//south
-		
-		//
+		//panelSuoth
+			  panelSuoth = new JPanel();
+			  panelMain.add(panelCenter, BorderLayout.CENTER);
+			  
+			  buttonBackup = new JButton("Backup");
+				// create new ButtonHandler for button event handling
+				// ButtonHandler backupHandler = new BackupHandler();
+				// backupButton.addActionListener( backupHandler );
+				// check again in unit 11 pages 31-36
+				add(backupButton,BorderLayout.EAST);
+
+				restoreButton = new JButton("Restore");
+				// create new ButtonHandler for button event handling
+				// ButtonHandler restoreHandler = new restoreHandler();
+				// restoreButton.addActionListener( RestoreHandler );
+				// check again in unit 11 pages 31-36
+				add(restoreButton,BorderLayout.WEST);
+
+				deleteButton = new JButton("Delete");
+				// create new ButtonHandler for button event handling
+				// ButtonHandler deleteHandler = new DeleteHandler();
+				// deleteButton.addActionListener( deleteHandler );
+				// check again in unit 11 pages 31-36
+				add(deleteButton,BorderLayout.WEST);
+
+				addButton = new JButton("Add");
+				// create new ButtonHandler for button event handling
+				// ButtonHandler addHandler = new AddHandler();
+				// addButton.addActionListener( addHandler );
+				// check again in unit 11 pages 31-36
+				add(addButton,BorderLayout.EAST);
+
+				renameButton = new JButton("Rename");
+				// create new ButtonHandler for button event handling
+				// ButtonHandler renameHandler = new RenameHandler();
+				// renameButton.addActionListener( renameHandler );
+				// check again in unit 11 pages 31-36
+				add(renameButton,BorderLayout.EAST);
+		//end panelSuoth
 
 		
 
 		
 
-		suorceList = new JList(textingArr);
-		suorceList.setVisibleRowCount(5);
-		suorceList.setFixedCellWidth(200); // set width  
-		suorceList.setFixedCellHeight(25); // set height 
-		suorceList.setSelectionMode(ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
-		// add a JScrollPane containing JList to frame
-		add(new JScrollPane(suorceList));
-		// ListListener suorceListHandler = new SuorceListListener();
-		// suorceList.addActionListener( suorceListHandler );
-		// check again in unit 11 pages 31-36
-		add(suorceList,BorderLayout.WEST);
+		
 
-		backupList = new JList();
-		backupList.setVisibleRowCount(5);
-		backupList.setFixedCellWidth(100);// set width  
-		backupList.setFixedCellHeight(25);// set height
-		backupList.setSelectionMode(ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
-		// add a JScrollPane containing JList to frame
-		add(new JScrollPane(backupList));
-		// ListListener backupListHandler = new BackupListListener();
-		// backupList.addActionListener( backupListHandler );
-		// check again in unit 11 pages 31-36
-		add(backupList,BorderLayout.SOUTH);
-
-		backupButton = new JButton("Backup");
-		// create new ButtonHandler for button event handling
-		// ButtonHandler backupHandler = new BackupHandler();
-		// backupButton.addActionListener( backupHandler );
-		// check again in unit 11 pages 31-36
-		add(backupButton,BorderLayout.EAST);
-
-		restoreButton = new JButton("Restore");
-		// create new ButtonHandler for button event handling
-		// ButtonHandler restoreHandler = new restoreHandler();
-		// restoreButton.addActionListener( RestoreHandler );
-		// check again in unit 11 pages 31-36
-		add(restoreButton,BorderLayout.WEST);
-
-		deleteButton = new JButton("Delete");
-		// create new ButtonHandler for button event handling
-		// ButtonHandler deleteHandler = new DeleteHandler();
-		// deleteButton.addActionListener( deleteHandler );
-		// check again in unit 11 pages 31-36
-		add(deleteButton,BorderLayout.WEST);
-
-		addButton = new JButton("Add");
-		// create new ButtonHandler for button event handling
-		// ButtonHandler addHandler = new AddHandler();
-		// addButton.addActionListener( addHandler );
-		// check again in unit 11 pages 31-36
-		add(addButton,BorderLayout.EAST);
-
-		renameButton = new JButton("Rename");
-		// create new ButtonHandler for button event handling
-		// ButtonHandler renameHandler = new RenameHandler();
-		// renameButton.addActionListener( renameHandler );
-		// check again in unit 11 pages 31-36
-		add(renameButton,BorderLayout.EAST);
+		
 
 		// code...
 	}
