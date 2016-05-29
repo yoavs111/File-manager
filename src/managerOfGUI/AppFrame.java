@@ -111,53 +111,56 @@ public class AppFrame extends JFrame {
 		//end panelCenter
 		
 		//panelSuoth
-			  panelSuoth = new JPanel();
-			  panelMain.add(panelCenter, BorderLayout.CENTER);
+		  panelSuoth = new JPanel();
+	      panelMain.add(panelCenter, BorderLayout.SOUTH);
+	      
+		  //buttonBackup
+			buttonBackup = new JButton("Backup");
+			// create new ButtonHandler for button event handling
+			// ButtonHandler backupHandler = new BackupHandler();
+			// backupButton.addActionListener( backupHandler );
+			// check again in unit 11 pages 31-36
+			panelSuoth.add(buttonBackup);
+          //end buttonBackup
 			  
-			  buttonBackup = new JButton("Backup");
-				// create new ButtonHandler for button event handling
-				// ButtonHandler backupHandler = new BackupHandler();
-				// backupButton.addActionListener( backupHandler );
-				// check again in unit 11 pages 31-36
-				add(backupButton,BorderLayout.EAST);
+		  //buttonRestore
+			buttonRestore = new JButton("Restore");
+			// create new ButtonHandler for button event handling
+			// ButtonHandler restoreHandler = new restoreHandler();
+			// restoreButton.addActionListener( RestoreHandler );
+			// check again in unit 11 pages 31-36
+			panelSuoth.add(buttonRestore);
+          //end buttonRestore
+			
+		  //buttonDelete
+			buttonDelete = new JButton("Delete");
+			// create new ButtonHandler for button event handling
+			// ButtonHandler deleteHandler = new DeleteHandler();
+			// deleteButton.addActionListener( deleteHandler );
+			// check again in unit 11 pages 31-36
+			panelSuoth.add(buttonDelete);
+          //end buttonDelete
+				
+		  //buttonAdd
+			buttonAdd = new JButton("Add");
+			// create new ButtonHandler for button event handling
+			// ButtonHandler addHandler = new AddHandler();
+			// addButton.addActionListener( addHandler );
+			// check again in unit 11 pages 31-36
+			panelSuoth.add(buttonAdd);
+		  //end buttonAdd
 
-				restoreButton = new JButton("Restore");
-				// create new ButtonHandler for button event handling
-				// ButtonHandler restoreHandler = new restoreHandler();
-				// restoreButton.addActionListener( RestoreHandler );
-				// check again in unit 11 pages 31-36
-				add(restoreButton,BorderLayout.WEST);
-
-				deleteButton = new JButton("Delete");
-				// create new ButtonHandler for button event handling
-				// ButtonHandler deleteHandler = new DeleteHandler();
-				// deleteButton.addActionListener( deleteHandler );
-				// check again in unit 11 pages 31-36
-				add(deleteButton,BorderLayout.WEST);
-
-				addButton = new JButton("Add");
-				// create new ButtonHandler for button event handling
-				// ButtonHandler addHandler = new AddHandler();
-				// addButton.addActionListener( addHandler );
-				// check again in unit 11 pages 31-36
-				add(addButton,BorderLayout.EAST);
-
-				renameButton = new JButton("Rename");
-				// create new ButtonHandler for button event handling
-				// ButtonHandler renameHandler = new RenameHandler();
-				// renameButton.addActionListener( renameHandler );
-				// check again in unit 11 pages 31-36
-				add(renameButton,BorderLayout.EAST);
+		  //buttonRename
+		    buttonRename = new JButton("Rename");
+			// create new ButtonHandler for button event handling
+			// ButtonHandler renameHandler = new RenameHandler();
+			// renameButton.addActionListener( renameHandler );
+			// check again in unit 11 pages 31-36
+			panelSuoth.add(buttonRename);
+		  //end buttonRename
+				
 		//end panelSuoth
-
-		
-
-		
-
-		
-
-		
-
+				
 		// code...
 	}
 
