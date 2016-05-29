@@ -47,13 +47,11 @@ public class AppFrame extends JFrame {
 		       
 		       //SuorceTitel
 		         labelSuorceTitel = new JLabel("Source Folder");
-		         labelSuorceTitel.setSize(15,15);
 			     panelInerNorth1.add(labelSuorceTitel,BorderLayout.WEST);
 			   //end SuorceTitel
 			     
                //BackupTitel
 			     labelBackupTitel = new JLabel("Backup Folder");
-			     labelBackupTitel.setSize(15,15);
 			     panelInerNorth1.add(labelBackupTitel,BorderLayout.EAST);
 			   //end BackupTitel
 			     
@@ -81,38 +79,42 @@ public class AppFrame extends JFrame {
 		//end panelNorth
 		
 		//panelCenter
-		  panelCenter = new JPanel(new BorderLayout());
+		  panelCenter = new JPanel(new FlowLayout());
 		  panelMain.add(panelCenter, BorderLayout.CENTER);
 		  
 		  //listSuorce
 		    listSuorce = new JList(textingArr);
 		    listSuorce.setVisibleRowCount(5);
+		    listSuorce.setFixedCellWidth(199); // set width  
+		    listSuorce.setFixedCellHeight(25); // set height
 		    listSuorce.setSelectionMode(ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
 			// add a JScrollPane containing JList to frame
 		    panelCenter.add(new JScrollPane(listSuorce));
 			// ListListener suorceListHandler = new SuorceListListener();
 			// suorceList.addActionListener( suorceListHandler );
 			// check again in unit 11 pages 31-36
-			panelCenter.add(listSuorce,BorderLayout.WEST);
+			panelCenter.add(listSuorce);
           //end listSuorce
 			
 			//listBackup
-			  listBackup = new JList();
+			  listBackup = new JList(textingArr);
 			  listBackup.setVisibleRowCount(5);
+			  listBackup.setFixedCellWidth(199); // set width  
+			  listBackup.setFixedCellHeight(25); // set height
 			  listBackup.setSelectionMode(ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
 			  //add a JScrollPane containing JList to frame
 			  panelCenter.add(new JScrollPane(listBackup));
 			  // ListListener backupListHandler = new BackupListListener();
 			  // backupList.addActionListener( backupListHandler );
 			  // check again in unit 11 pages 31-36
-			  panelCenter.add(listBackup,BorderLayout.EAST);
+			  panelCenter.add(listBackup);
 			//end listBackup
 			   
 		//end panelCenter
 		
 		//panelSuoth
-		  panelSuoth = new JPanel();
-	      panelMain.add(panelCenter, BorderLayout.SOUTH);
+		  panelSuoth = new JPanel(new FlowLayout());
+	      panelMain.add(panelSuoth, BorderLayout.SOUTH);
 	      
 		  //buttonBackup
 			buttonBackup = new JButton("Backup");

@@ -13,7 +13,7 @@ public class Appmain {
 		//pack is used when you are using layout managers and you want the JFrame to be the smallest size showing all components. 
 		//If you set the size of your JFrame manually ( setSize(), setBounds() ) then you don't need to call pack().
 		//appFrame.pack();
-		appFrame.setResizable(false);//Disable resize 
+		//appFrame.setResizable(false);//Disable resize 
 		appFrame.setLocationRelativeTo(null);//Set the start position 
 		appFrame.setVisible(true); // display frame
 	} // end main
