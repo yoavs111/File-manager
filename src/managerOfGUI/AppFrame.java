@@ -25,10 +25,10 @@ public class AppFrame extends JFrame {
 	@SuppressWarnings("unchecked")
 	public AppFrame() {
 		super("FIle Manager");
-		//setLayout(new FlowLayout());// check layout in the of unit 11
+		setLayout(new BorderLayout());// check layout in the of unit 11
 		//frame/panel.setBorder( new EmptyBorder (10,10,10,10));--> check in google
-		BorderLayout layout = new BorderLayout(5,5);
-		setLayout(layout);
+		panelMain = new JPanel(new BorderLayout());
+		add(panelMain);
 		//לצריך לקבוע גידל של רכיבי GUI
 		//BorderLayout do it by it self
 		//BorderLayout only allows one component per section. 
@@ -37,17 +37,52 @@ public class AppFrame extends JFrame {
 		//FlowLayout is go for the buttons panels bicus it orgnaze them in a row
 		
 		
-		//north
+		//panelNorth
+		   panelNorth = new JPanel(new BorderLayout());
+		   panelMain.add(panelNorth, BorderLayout.NORTH);
+		    
+		   //inerNorth1
+		       panelInerNorth1 = new JPanel(new BorderLayout());
+		       panelNorth.add(panelInerNorth1, BorderLayout.NORTH);
+		       
+		       //SuorceTitel
+		         labelSuorceTitel = new JLabel("Source Folder");
+		         labelSuorceTitel.setSize(15,15);
+			     panelInerNorth1.add(labelSuorceTitel,BorderLayout.WEST);
+			   //end SuorceTitel
+			     
+               //BackupTitel
+			     labelBackupTitel = new JLabel("Backup Folder");
+			     labelBackupTitel.setSize(15,15);
+			     panelInerNorth1.add(labelBackupTitel,BorderLayout.EAST);
+			   //end BackupTitel
+			     
+	        //end inerNorth1
+			
+			//inernorth2
+			  panelInerNorth2 = new JPanel(new BorderLayout());
+			  panelNorth.add(panelInerNorth2, BorderLayout.SOUTH);
+			  
+			  //textFieldSuorcePath
+			    textFieldSuorcePath = new JTextField(25);
+			  //SuorcePathHanler textHandler = new SuorcePathHanler();
+			  //suorcePath.addActionListener( textHandler );
+			    panelInerNorth2.add(textFieldSuorcePath,BorderLayout.WEST);
+			  //end textFieldSuorcePath
+			    
+              //textFieldBackupPath
+			    textFieldBackupPath = new JTextField("here I need to set the path to the backup folder");
+			    textFieldBackupPath.setEnabled(false);
+			    panelInerNorth2.add(textFieldBackupPath,BorderLayout.EAST);
+			  //endtextFieldBackupPath
+			    
+		    //end inernorth2	
+			    
+		//end panelNorth
 		
-		//
+         
 		
-         //inernorth1
 		
-	    //
-		
-		//inernorth2
-		
-	    //
 		
 		//center
 		
@@ -57,24 +92,9 @@ public class AppFrame extends JFrame {
 		
 		//
 
-		suorceTitel = new JLabel("Source Folder");
-		//suorceTitel.setVerticalTextPosition(SwingConstants.TOP);
-		//suorceTitel.setHorizontalTextPosition(SwingConstants.LEFT);
-		add(suorceTitel,BorderLayout.NORTH);
+		
 
-		backupTitel = new JLabel("Backup Folder");
-		backupTitel.setVerticalTextPosition(SwingConstants.TOP);
-		backupTitel.setHorizontalTextPosition(SwingConstants.LEFT);
-		add(backupTitel,BorderLayout.NORTH);
-
-		suorcePath = new JTextField(25);
-		// SuorcePathHanler textHandler = new SuorcePathHanler();
-		// suorcePath.addActionListener( textHandler );
-		add(suorcePath,BorderLayout.NORTH);
-
-		backupPath = new JTextField("here I need to set the path to the backup folder");
-		backupPath.setEnabled(false);
-		add(backupPath,BorderLayout.NORTH);
+		
 
 		suorceList = new JList(textingArr);
 		suorceList.setVisibleRowCount(5);
