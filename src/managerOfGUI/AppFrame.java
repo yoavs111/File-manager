@@ -5,6 +5,13 @@ import javax.swing.*;
 // import handlers...?
 
 public class AppFrame extends JFrame {
+	private JPanel panelMain;
+	private JPanel panelNorth;
+	private JPanel panelInerNorth1;//labels(in the north of panelNorth)
+	private JPanel panelInerNorth2;//text fils (in the suoth of panelNorth)
+	private JPanel panelCenter;//lists
+	private JPanel panelSuoth;//buttos
+	
 	private JLabel suorceTitel;
 	private JLabel backupTitel;
 
@@ -28,9 +35,36 @@ public class AppFrame extends JFrame {
 	public AppFrame() {
 		super("FIle Manager");
 		//setLayout(new FlowLayout());// check layout in the of unit 11
-		
+		//frame/panel.setBorder( new EmptyBorder (10,10,10,10));--> check in google
 		BorderLayout layout = new BorderLayout(5,5);
 		setLayout(layout);
+		//לצריך לקבוע גידל של רכיבי GUI
+		//BorderLayout do it by it self
+		//BorderLayout only allows one component per section. 
+		//If you want to keep BorderLayout, but have 2+ buttons, 
+		//I suggest first putting each of those buttons into a JPanel and then putting that JPanel into the east slot.
+		//FlowLayout is go for the buttons panels bicus it orgnaze them in a row
+		
+		
+		//north
+		
+		//
+		
+         //inernorth1
+		
+	    //
+		
+		//inernorth2
+		
+	    //
+		
+		//center
+		
+		//
+		
+		//south
+		
+		//
 
 		suorceTitel = new JLabel("Source Folder");
 		//suorceTitel.setVerticalTextPosition(SwingConstants.TOP);
