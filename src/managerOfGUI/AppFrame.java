@@ -6,28 +6,19 @@ import javax.swing.*;
 
 public class AppFrame extends JFrame {
 	private JPanel panelMain;
+	
 	private JPanel panelNorth;
 	private JPanel panelInerNorth1;//labels(in the north of panelNorth)
+	private JLabel labelSuorceTitel, labelBackupTitel;
 	private JPanel panelInerNorth2;//text fils (in the suoth of panelNorth)
-	private JPanel panelCenter;//lists
-	private JPanel panelSuoth;//buttos
+	private JTextField textFieldSuorcePath,textFieldBackupPath;
 	
-	private JLabel suorceTitel;
-	private JLabel backupTitel;
-
-	private JTextField suorcePath;
-	private JTextField backupPath;
-
-	private JList suorceList;
-	private JList backupList;
-
-	private JButton backupButton;
-	private JButton restoreButton;
-	private JButton deleteButton;
-	private JButton addButton;
-	private JButton renameButton;
-
-
+	private JPanel panelCenter;//lists
+	private JList listSuorce, listBackup;
+	
+	private JPanel panelSuoth;//buttos
+	private JButton buttonBackup, buttonRestore, buttonDelete, buttonAdd, buttonRename;
+	
 	private String textingArr[]={"test1","test2","test3","test4","test5","test6","test7","test8"};
 	// fileds...
 
